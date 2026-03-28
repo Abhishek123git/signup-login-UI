@@ -1,19 +1,19 @@
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { FaCircleCheck } from "react-icons/fa6";
-import { RiErrorWarningFill, RiInformation2Line  } from "react-icons/ri";
-import Components  from  "../components/ModelPopup";
+import { RiErrorWarningFill, RiInformation2Line } from "react-icons/ri";
+import Components from "../components/ModelPopup";
 const SignupForm = () => {
     const [accepted, setAccepted] = useState(false);
     const [isOpen, setIsOpen] = useState(false);
     const { register, handleSubmit, formState: { errors, touchedFields } } = useForm();
 
-    const submit = (e) => {        
+    const submit = (e) => {
         if (!accepted) {
             alert("You must accept the terms and conditions.");
             return;
         }
-        else{
+        else {
             alert("form is submitted");
         }
     };
@@ -31,12 +31,14 @@ const SignupForm = () => {
                     <small className="mx-2 my-1 text-gray-500">Use 8 or more letters, numbers and symbols</small>
                     <button className="flex items-center justify-center font-semibold mx-2 my-1 p-2 rounded-xl w-40 hover:bg-gray-300" onClick={() => setIsOpen(true)}>Password tips <RiInformation2Line className="ml-1 font-normal" /></button>
                 </div>
+
                 <div className="flex items-center space-x-2">
-                    <input type="checkbox" className="w-4 h-4 accent-blue-600" checked={accepted} onChange={(e) => setAccepted(e.target.checked)} />
-                    <span className="text-sm text-gray-700">I accepted all tearms and conditions.</span>
+                    <input id="accept" type="checkbox" className="w-4 h-4 accent-blue-600" checked={accepted} onChange={(e) => setAccepted(e.target.checked)} />
+                    <label htmlFor="accept" className="text-sm text-gray-700">I accepted all tearms and conditions.</label>
                 </div>
 
-                <button type="submit" className="bg-blue-500 text-white font-semibold rounded-xl p-2 mt-4 hover:bg-blue-600">Submit</button>
+
+                <button type="submit" className="bg-blue-500 text-black font-semibold rounded-xl p-2 mt-4 hover:bg-blue-600">Submit</button>
             </form>
             <Components.PasswordTips isOpen={isOpen} onClose={() => setIsOpen(false)} />
         </>

@@ -4,7 +4,9 @@ import Signup from './components/Signup';
 function App() {
 
   return (
-    <Signup />
+    <main>
+      <Signup />
+    </main>
   );
 }
 

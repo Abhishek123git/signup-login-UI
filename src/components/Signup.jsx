@@ -11,9 +11,9 @@ const Signup = () => {
 
     return (
         <div className="w-screen h-screen my-4 flex items-center justify-center font-serif">
-            <div className="w-full max-w-md bg-[#f7f1e3] shadow-lg rounded-lg p-4">
+            <div className="w-full max-w-md shadow-2xl rounded-xl p-4">
                 <div className="flex justify-center w-full h-auto ">
-                    <img src={`${process.env.PUBLIC_URL}/assets/brandlog.webp`} alt="brandlogo" loading="lazy" />
+                    <img src={`${process.env.PUBLIC_URL}/assets/brandlog.webp`} width={65} height={65} alt="brandlogo" loading="lazy" />
                 </div>
                 <p className="text-2xl font-bold mb-4 text-center">{isLogin ? "Log in to see more" : "Sign Up"}</p>
                 <p className="text-base text-center font-semibold">{isLogin ? "Hello! Please log in with your account details to continue." : "Hello! please tell us a little bit about youself."}</p>
@@ -26,7 +26,7 @@ const Signup = () => {
                         </button>
                     </p> : null
                 }
-                <button className="flex w-full justify-center my-2 text-xs font-semibold" onClick={() => setIsOpen(true)}>{isLogin ? "Update login method" : null}</button>
+                {isLogin && ( <button className="flex w-full justify-center my-2 text-xs font-semibold" onClick={() => setIsOpen(true)}> Update login method </button> )}
                 <span className="flex justify-center items-center gap-1 text-xs font-semibold">{isLogin ? "Need an account ?" : "Already have an account ? "}
                     <button onClick={() => setIsLogin(!isLogin)} className="font-semibold underline underline-offset-2 hover:decoration-[#0652DD] hover:text-[#009432]">{isLogin ? "Register" : "Login"}</button>
                 </span>

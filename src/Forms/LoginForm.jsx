@@ -60,7 +60,7 @@ const LoginForm = () => {
                 </div>
 
                 <button type="button" className="flex text-sm font-semibold text-sky-500" onClick={() => setIsOpen(true)}>Forgot your password ?</button>
-                <button type="submit" className="bg-blue-500 text-white rounded-xl p-2 mt-4 hover:bg-blue-600">Login in</button>
+                <button type="submit" className="bg-blue-500 text-black font-semibold rounded-xl p-2 mt-4 hover:bg-blue-600">Log in</button>
             </form>
             <Components.ResetPassword isOpen={isOpen} onClose={() => setIsOpen(false)} />
         </>
